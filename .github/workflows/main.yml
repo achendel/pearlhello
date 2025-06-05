@@ -1,4 +1,4 @@
-name: Deploy Hello World
+name: Hello World Python
 
 on:
   push:
@@ -6,19 +6,17 @@ on:
       - main
 
 jobs:
-  build:
+  run-hello:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.x
+        python-version: '3.x'
 
-   
-
-    - name: Run Hello World
-      run: python3 python.py
+    - name: Run Hello World script
+      run: python python.py
